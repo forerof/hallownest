@@ -1,0 +1,349 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    /* eliminar márgenes predeterminados del navegador*/
+    box-sizing: border-box;
+    /* Asegura que el ancho y el alto incluyan borde y padding */
+}
+
+/* Global Styles */
+img {
+    max-width: 100%;
+    /* La imagen nunca será más ancha que su contenedor */
+    height: auto;
+    /* Mantiene la proporción original de la imagen */
+}
+
+a {
+    text-decoration: none;
+    /* Elimina el subrayado */
+    color: inherit;
+    /* Hereda el color del texto del contenedor padre */
+}
+
+a:visited {
+    color: inherit;
+    /* Elimina el color de los enlaces visitados */
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    /* Asegura que no se muestre subrayado al pasar el cursor */
+    outline: none;
+    /* Opcional: elimina el borde por foco */
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+
+/* Utility Classes */
+.mt-64 {
+    margin-top: 64px;
+}
+
+.mt-72 {
+    margin-top: 72px;
+}
+
+/* Header Styles */
+.header {
+    width: 100%;
+    height: auto;
+}
+
+.header-content {
+    padding: 8px 160px;
+    /* arriba y abajo:      8px  de relleno */
+    /* izquierda y derecha: 120px  de relleno */
+}
+
+.header-logo {
+    width: 152px;
+    height: auto;
+}
+
+.header-links {
+    width: auto;
+    height: 64px;
+    display: flex;
+    /* Activa Flexbox */
+    align-items: center;
+    /* Alinea verticalmente */
+}
+
+.header-link {
+    margin: 16px;
+}
+
+a.header-link:hover {
+    color: #BCBCBC;
+    /* Enlace con color de hover diferente */
+}
+
+/* Separator */
+.sepator-blank {
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
+}
+
+/* Content Styles */
+.content {
+    padding: 0px 160px;
+    margin-top: 40px;
+}
+
+.content-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Card Styles */
+.card {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 40px;
+}
+
+.card-body {
+    margin-top: 16px;
+    width: 360px;
+    color: #F2F2F2;
+}
+
+.card-button {
+    margin-top: 24px;
+    width: 232px;
+    height: 48px;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 5px;
+    display: flex;
+    /* Usamos Flexbox para centrar el contenido */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    text-align: center;
+    /* Asegura que el texto dentro del <a> esté centrado */
+}
+
+.card-image {
+    width: 640px;
+    height: auto;
+}
+
+.card-image img {
+    border-radius: 16px;
+}
+
+
+/* Gallery Styles */
+.gallery-title {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery {
+    display: grid;
+    /* Activamos Grid Layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* 3 columnas responsive */
+    gap: 10px;
+    /* Espacio entre las imágenes */
+    margin-top: 40px;
+    /* Separación respecto al título */
+}
+
+.gallery img {
+    width: 152px;
+    /* Escalar las imágenes al tamaño del contenedor */
+    height: auto;
+    /* Altura fija para las imágenes */
+    object-fit: cover;
+    /* Recorta la imagen para que encaje en el espacio */
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra ligera */
+    transition: transform 0.3s ease;
+    /* Suaviza la transición al escalar */
+}
+
+/* Efecto de hover en la imagen */
+.gallery-image:hover img {
+    transform: scale(2.5);
+}
+
+
+.gallery-description {
+    margin-top: 32px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    height: 132px;
+    /* Ajusta la altura según el contenido */
+    margin-top: 40px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    /* Cambia la dirección del flujo a columna */
+    justify-content: center;
+    /* Centra los hijos verticalmente */
+    align-items: center;
+    /* Centra los hijos horizontalmente */
+}
+
+.footer-links {
+    color: #7A7A7A;
+    font-size: 16px;
+    width: auto;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+
+}
+
+.footer-links a {
+    margin: 16px;
+    font-weight: bolder;
+}
+
+.footer-links a {
+    margin: 16px;
+    font-weight: bolder;
+    position: relative;
+    /* Necesario para posicionar el pseudo-elemento */
+}
+
+.footer-links a::after {
+    content: "";
+    /* Crea el separador */
+    display: inline-block;
+    width: 1px;
+    /* Grosor de la línea */
+    height: 80%;
+    /* Ajusta el alto de la línea según tus necesidades */
+    background-color: #ccc;
+    /* Color gris del separador */
+    position: absolute;
+    top: 10%;
+    /* Centra verticalmente */
+    right: -24px;
+    /* Ajusta la posición del separador */
+}
+
+.footer-links a:last-child::after {
+    display: none;
+    /* Elimina el separador después del último enlace */
+}
+
+.footer-info {
+    font-weight: bolder;
+    font-size: 16px;
+    margin-top: 18px;
+    color: #7A7A7A;
+}
+
+/* Gallery Styles Characters */
+.gallery-characters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas de igual ancho */
+    gap: 20px;
+    /* Espacio entre los elementos */
+    margin-top: 40px;
+    justify-items: center;
+    /* Centra los elementos horizontalmente */
+    text-align: center;
+    /* Centra los textos debajo de las imágenes */
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    /* Apila la imagen y el texto verticalmente */
+    align-items: center;
+    cursor: pointer;
+}
+
+.character img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto de hover en la imagen */
+.character:hover img {
+    transform: scale(1.1);
+}
+
+.character-name {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #F2F2F2;
+    /* Ajusta el color según el diseño */
+}
+
+/* History Styles */
+.history {
+    width: 70%;
+    color: #d0d0d0;
+}
+
+.history a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* Estilo del sumario */
+.summary {
+    position: sticky;
+    /* Fijo mientras se desplaza */
+    top: 0;
+    /* Distancia desde la parte superior de la ventana */
+    padding: 16px;
+    /* background-color: #fff; */
+    /* Fondo blanco para que no se mezcle con el contenido al desplazarse */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar contraste al menú fijo */
+    z-index: 10;
+    /* Prioridad para superponerlo sobre otros elementos */
+    height: 250px;
+}
+
+.summary a {
+    margin-top: 10px;
+    display: block;
+    color: #9b9b9b;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.summary a:hover {
+    color: #BCBCBC;
+}
+
