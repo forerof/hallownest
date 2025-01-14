@@ -86,6 +86,13 @@ html, body {
     font-size: 24px;
     cursor: pointer;
     color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+/* Cambiar a "X" */
+.hamburger-menu.open {
+    transform: rotate(100deg); /* Opcional para animar */
+    color: #ffffff; /* Cambia el color o personaliza como desees */
 }
 
 .header-links {
@@ -95,7 +102,7 @@ html, body {
 
 .header-link {
     text-decoration: none;
-    color: #000;
+    color: #FFFFFF;
     margin: 8px;
 }
 
