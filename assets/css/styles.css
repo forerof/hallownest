@@ -440,6 +440,33 @@ a.header-link:hover {
     }
 }
 
+@media (min-width: 800px) and (max-width: 1000px) {
+    /* Content Styles */
+    .content {
+        padding: 25px;
+        margin-top: 0px;
+    }
+
+    /* Card Styles */
+    .space-card {
+        display: block;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card-body {
+        width: 100%;
+    }
+
+    .card-image {
+        margin-top: 40px;
+        width: 100%;
+        height: auto;
+    }
+}
+
 @media (max-width: 800px) {
 
     /* Header Styles */
