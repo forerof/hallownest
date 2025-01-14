@@ -16,8 +16,9 @@
 </head>
 
 <body>
+    <!-- Menu de navegacion (se repite en todas las páginas) -->
     <header class="header">
-        <div class="header-content content-space-between">
+        <div class="header-content">
             <div class="header-logo">
                 <a href="./index.html">
                     <img src="./assets/img/logo.webp" 
@@ -25,6 +26,11 @@
                     >
                 </a>
             </div>
+
+            <!-- Botón del menú hamburguesa -->
+            <button class="hamburger-menu" aria-label="Abrir menú">
+                &#9776; <!-- Ícono de hamburguesa -->
+            </button>
 
             <nav class="header-links">
                 <a href="./index.html"      class="header-link">Inicio</a>
@@ -39,7 +45,7 @@
     <hr class="sepator-blank">
 
     <div class="content">
-        <div class="content-space-between mt-64">
+        <div class="card-container space-card mt-64">
             <div class="card-image">
                 <img src="./assets/img/activities/map.webp"
                     alt="Mapa del reino de Hallownest"
@@ -55,9 +61,8 @@
             </div>                
         </div>
        
-
         <section>
-            <div class="content-space-between mt-72">
+            <div class="space-card mt-72">
                 <div class="card">
                     <div>
                         <h3>Cumbre de cristal</h3>
@@ -76,7 +81,7 @@
         </section>
 
         <section>
-            <div class="content-space-between mt-72">
+            <div class="card-container space-card mt-72">
                 <div class="card-image">
                     <img src="./assets/img/activities/city-of-tears.webp"
                         alt="Hogar de una familia real en Ciudad de lagrimas"
@@ -96,7 +101,7 @@
         </section>
 
         <section>
-            <div class="content-space-between mt-72">
+            <div class="space-card mt-72">
                 <div class="card">
                     <div>
                         <h3>Colmena</h3>
@@ -116,7 +121,7 @@
         </section>
 
         <section>
-            <div class="content-space-between mt-72">
+            <div class="card-container space-card mt-72">
                 <div class="card-image">
                     <img src="./assets/img/activities/the-coliseum-of-fools.webp"
                         alt="Batalla en el centro del Coliseo de los insensatos">
@@ -148,6 +153,8 @@
             <p>© 2024 forerof</p>
         </div>
     </footer>
+
+    <script src="/assets/js/menu.js"></script>
 </body>
 
 </html>

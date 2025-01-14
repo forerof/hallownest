@@ -42,6 +42,13 @@ body {
     color: #FFFFFF;
 }
 
+/* Hacer que html y body ocupen toda la altura del viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
 
 /* Utility Classes */
 .mt-64 {
@@ -56,35 +63,44 @@ body {
 .header {
     width: 100%;
     height: auto;
+    position: relative;
 }
 
 .header-content {
-    padding: 8px 160px;
-    /* arriba y abajo:      8px  de relleno */
-    /* izquierda y derecha: 120px  de relleno */
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.header-logo {
-    width: 152px;
+.header-logo img {
+    width: 120px;
     height: auto;
 }
 
+/* Botón del menú hamburguesa */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
 .header-links {
-    width: auto;
-    height: 64px;
     display: flex;
-    /* Activa Flexbox */
-    align-items: center;
-    /* Alinea verticalmente */
+    gap: 16px;
 }
 
 .header-link {
-    margin: 16px;
+    text-decoration: none;
+    color: #000;
+    margin: 8px;
 }
 
 a.header-link:hover {
     color: #BCBCBC;
-    /* Enlace con color de hover diferente */
 }
 
 /* Separator */
@@ -98,14 +114,22 @@ a.header-link:hover {
 .content {
     padding: 0px 160px;
     margin-top: 40px;
+    flex: 1; /* Crece para ocupar todo el espacio disponible */
 }
 
-.content-space-between {
+/* Card Styles */
+.space-card {
     display: flex;
     justify-content: space-between;
 }
 
-/* Card Styles */
+.card-container {
+    display: flex;
+    /* Activa Flexbox */
+    gap: 50px;
+    /* Espacio horizontal entre elementos */
+}
+
 .card {
     width: 40%;
     display: flex;
@@ -148,7 +172,6 @@ a.header-link:hover {
     border-radius: 16px;
 }
 
-
 /* Gallery Styles */
 .gallery-title {
     width: 100%;
@@ -188,7 +211,6 @@ a.header-link:hover {
     transform: scale(2.5);
 }
 
-
 .gallery-description {
     margin-top: 32px;
     width: 100%;
@@ -200,9 +222,10 @@ a.header-link:hover {
 /* Footer Styles */
 .footer {
     width: 100%;
-    height: 132px;
+    height: auto;
     /* Ajusta la altura según el contenido */
     margin-top: 40px;
+    padding: 20px 0;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -211,6 +234,8 @@ a.header-link:hover {
     /* Centra los hijos verticalmente */
     align-items: center;
     /* Centra los hijos horizontalmente */
+    text-align: center;
+
 }
 
 .footer-links {
@@ -347,3 +372,168 @@ a.header-link:hover {
     color: #BCBCBC;
 }
 
+/* Responsividad */
+@media (max-width: 1200px) {
+
+    /* Card Styles */
+    .card {
+        width: 60%;
+    }
+
+    /* Gallery Styles */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Exactamente 3 columnas */
+        grid-auto-rows: auto;
+        /* Ajusta automáticamente la altura de las filas */
+        gap: 10px;
+        /* Espacio entre columnas y filas */
+        margin-top: 40px;
+        justify-items: center;
+        /* Centra horizontalmente los elementos */
+        align-items: center;
+        /* Centra verticalmente los elementos */
+    }
+
+    .gallery img {
+        width: 250px;
+        /* Escalar las imágenes al tamaño del contenedor */
+        height: auto;
+        /* Altura fija para las imágenes */
+        object-fit: cover;
+        /* Recorta la imagen para que encaje en el espacio */
+        border-radius: 8px;
+        /* Esquinas redondeadas */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        /* Sombra ligera */
+        transition: transform 0.3s ease;
+        /* Suaviza la transición al escalar */
+    }
+
+    /* Efecto de hover en la imagen */
+    .gallery-image:hover img {
+        transform: scale(1.5);
+    }
+
+    /* Gallery Styles Characters */
+    .gallery-characters {
+        grid-template-columns: repeat(3, 1fr);
+        /* Tres columnas */
+        gap: 30px;
+    }
+
+    /* History Styles */
+    .history {
+        width: 100%;
+    }
+
+    .summary {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /* Header Styles */
+    .header-content {
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .header-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        padding: 16px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .header-links.open {
+        display: flex;
+    }
+
+    .header-link {
+        margin: 8px 16px;
+    }
+
+    /* Content Styles */
+    .content {
+        padding: 25px;
+        margin-top: 0px;
+    }
+
+    /* Card Styles */
+    .space-card {
+        display: block;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card-body {
+        width: 100%;
+    }
+
+    .card-image {
+        margin-top: 40px;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Gallery Styles */
+    .gallery {
+        grid-template-columns: 1fr;
+        /* Una sola columna */
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery-image:hover img {
+        transform: none;
+    }
+
+    .gallery-description {
+        font-size: 16px;
+    }
+
+    /* Footer Styles */
+    .footer {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-links {
+        display: none;
+    }
+
+    /* Gallery Styles Characters */
+    .gallery-characters {
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas */
+    }
+
+    /* History Styles */
+    .history {
+        width: 100%;
+    }
+
+    .summary {
+        display: none;
+    }
+}

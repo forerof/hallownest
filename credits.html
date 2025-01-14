@@ -16,8 +16,9 @@
 </head>
 
 <body>
+    <!-- Menu de navegacion (se repite en todas las páginas) -->
     <header class="header">
-        <div class="header-content content-space-between">
+        <div class="header-content">
             <div class="header-logo">
                 <a href="./index.html">
                     <img src="./assets/img/logo.webp" 
@@ -25,6 +26,11 @@
                     >
                 </a>
             </div>
+
+            <!-- Botón del menú hamburguesa -->
+            <button class="hamburger-menu" aria-label="Abrir menú">
+                &#9776; <!-- Ícono de hamburguesa -->
+            </button>
 
             <nav class="header-links">
                 <a href="./index.html"      class="header-link">Inicio</a>
@@ -38,7 +44,7 @@
 
     <hr class="sepator-blank">
 
-    <div class="content content-space-between">
+    <div class="content space-card">
         <div class="history">
             <section>
                 <h2>Referencias</h2>
@@ -128,6 +134,8 @@
             <p>© 2024 forerof</p>
         </div>
     </footer>
+
+    <script src="/assets/js/menu.js"></script>
 </body>
 
 </html>
