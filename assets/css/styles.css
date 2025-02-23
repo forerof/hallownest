@@ -501,7 +501,7 @@ a.header-link:hover {
 
     /* Map Styles */
     .info-card {
-        width: 50%;
+        width: 60%;
         /* En pantallas grandes, la tarjeta será más pequeña */
         left: 10%;
         /* Se ubicará en la parte izquierda del mapa */
@@ -538,7 +538,7 @@ a.header-link:hover {
 
     /* Map Styles */
     .info-card {
-        width: 50%;
+        width: 60%;
         /* En pantallas grandes, la tarjeta será más pequeña */
         left: 10%;
         /* Se ubicará en la parte izquierda del mapa */
