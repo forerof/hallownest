@@ -5,16 +5,13 @@ const isMobile = window.innerWidth < 800;
 
 var map = L.map('map', {
     crs: L.CRS.Simple,          // Sistema de coordenadas en píxeles
-    zoom: isMobile ? 10 : 2, 
     zoomSnap: 0,                // Permite niveles de zoom intermedios
     minZoom: -2,                // Permite alejarse más si es necesario
-    maxZoom: 10,
     zoomControl: false,         // Permite botones de zoom (default)
     scrollWheelZoom: false,     // Permite zoom con la rueda
     doubleClickZoom: false,     // Permite zoom con doble clic
     touchZoom: isMobile ? true : false,
-    scrollWheelZoom: isMobile ? true : false,
-    dragging: true,            // Permite arrastre del mapa 
+    dragging: false,            // Permite arrastre del mapa 
 });
 
 /* Imagenes que aparecen en el mapa */
