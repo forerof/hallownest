@@ -43,7 +43,8 @@ body {
 }
 
 /* Hacer que html y body ocupen toda la altura del viewport */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     display: flex;
@@ -91,8 +92,10 @@ html, body {
 
 /* Cambiar a "X" */
 .hamburger-menu.open {
-    transform: rotate(100deg); /* Opcional para animar */
-    color: #ffffff; /* Cambia el color o personaliza como desees */
+    transform: rotate(100deg);
+    /* Opcional para animar */
+    color: #ffffff;
+    /* Cambia el color o personaliza como desees */
 }
 
 .header-links {
@@ -121,7 +124,8 @@ a.header-link:hover {
 .content {
     padding: 0px 160px;
     margin-top: 40px;
-    flex: 1; /* Crece para ocupar todo el espacio disponible */
+    flex: 1;
+    /* Crece para ocupar todo el espacio disponible */
 }
 
 /* Card Styles */
@@ -379,9 +383,11 @@ a.header-link:hover {
     color: #BCBCBC;
 }
 
+/* Map Styles  */
+
 /* Asegurar que el contenedor ocupa toda la pantalla excepto el header y footer */
 .content-map {
-    flex-grow: 1;  
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -395,33 +401,28 @@ a.header-link:hover {
     background: #000000;
 }
 
-
+/* Carta de información */
 .info-card {
     position: absolute;
-    left: 50%; /* Centra la tarjeta dentro del mapa */
-    transform: translateX(-50%); /* Asegura que esté realmente centrada */
-    width: 90%; /* Ocupará casi todo el ancho en móviles */
-    max-width: 350px; /* No será demasiado grande en pantallas grandes */
-    background: white;
+    left: 20%;
+    /* Centra la tarjeta dentro del mapa */
+    transform: translateX(-50%);
+    /* Asegura que esté realmente centrada */
+    width: 90%;
+    /* Ocupará casi todo el ancho en móviles */
+    max-width: 350px;
+    /* No será demasiado grande en pantallas grandes */
+    background: rgba(1, 1, 1, 0.707);
     padding: 15px;
     border-radius: 8px;
     display: none;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    text-align: center;
+    text-align: justify;
+    color: #d0d0d0;
 }
 
-/* Mejor apariencia en pantallas más grandes */
-@media (min-width: 768px) {
-    .info-card {
-        width: 40%; /* En pantallas grandes, la tarjeta será más pequeña */
-        left: 10%; /* Se ubicará en la parte izquierda del mapa */
-        transform: none;
-    }
-}
-
-
-
+/* Boton para volver al mapa principal */
 .back-button {
     position: absolute;
     bottom: 20px;
@@ -434,9 +435,9 @@ a.header-link:hover {
     border-radius: 5px;
     cursor: pointer;
     display: none;
-    z-index: 1000; /* Asegura que esté por encima del mapa */
+    z-index: 1000;
+    /* Asegura que esté por encima del mapa */
 }
-
 
 /* Responsividad */
 @media (max-width: 1200px) {
@@ -497,9 +498,19 @@ a.header-link:hover {
     .summary {
         display: none;
     }
+
+    /* Map Styles */
+    .info-card {
+        width: 40%;
+        /* En pantallas grandes, la tarjeta será más pequeña */
+        left: 10%;
+        /* Se ubicará en la parte izquierda del mapa */
+        transform: none;
+    }
 }
 
 @media (min-width: 800px) and (max-width: 1000px) {
+
     /* Content Styles */
     .content {
         padding: 25px;
@@ -523,6 +534,15 @@ a.header-link:hover {
         margin-top: 40px;
         width: 100%;
         height: auto;
+    }
+
+    /* Map Styles */
+    .info-card {
+        width: 40%;
+        /* En pantallas grandes, la tarjeta será más pequeña */
+        left: 10%;
+        /* Se ubicará en la parte izquierda del mapa */
+        transform: none;
     }
 }
 
