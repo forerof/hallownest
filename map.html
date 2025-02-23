@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Historia - Hallownest</title>
+    <meta name="description" content="Mapa interactivo de Hallownest">
+    <meta name="keywords" content="Mapa, Hallownest, Historia">
+    <link rel="icon" type="image/ico" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+    <!-- Menú de navegación -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-logo">
+                <a href="./index.html">
+                    <img src="./assets/img/logo.webp" alt="Logotipo de Hallownest">
+                </a>
+            </div>
+
+            <!-- Botón del menú hamburguesa -->
+            <button class="hamburger-menu" aria-label="Abrir menú">
+                &#9776;
+            </button>
+
+            <nav class="header-links">
+                <a href="./index.html" class="header-link">Inicio</a>
+                <a href="./characters.html" class="header-link">Personajes</a>
+                <a href="./activities.html" class="header-link">Actividades</a>
+                <a href="./history.html" class="header-link">Historia</a>
+                <a href="./credits.html" class="header-link">Referencias</a>
+            </nav>
+        </div>
+    </header>
+
+    <hr class="sepator-blank">
+
+    <!-- Contenedor del mapa -->
+    <div class="content-map">
+        <div id="map"></div>
+        <div id="info" class="info-card"></div>
+        <button id="backButton" class="back-button">Volver</button>    
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./assets/js/map.js"></script>
+    <script src="./assets/js/menu.js"></script>
+</body>
+
+</html>
