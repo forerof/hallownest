@@ -14,13 +14,21 @@ var map = L.map('map', {
 
 /* Imagenes de zonas que aparecen en el mapa */
 var images = {
-    hallownest: './assets/img/map/hallownest.png',
-    boca_sucia: './assets/img/map/boca_sucia.png',
-    nido_profundo: './assets/img/map/nido_profundo.png',
-    limites_reino: './assets/img/map/limites_reino.png',
-    tierras_reposo: './assets/img/map/tierras_reposo.png',
-    ciudad_lagrimas: './assets/img/map/ciudad_lagrimas.png',
+    hallownest: './assets/img/map/hallownest.webp',
+    boca_sucia: './assets/img/map/boca_sucia.webp',
+    nido_profundo: './assets/img/map/nido_profundo.webp',
+    limites_reino: './assets/img/map/limites_reino.webp',
+    tierras_reposo: './assets/img/map/tierras_reposo.webp',
+    ciudad_lagrimas: './assets/img/map/ciudad_lagrimas.webp',
 };
+
+
+const customIcon = L.icon({
+    iconUrl: './assets/img/map/marker.webp',
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
+});
 
 /* Dimensiones de las imagenes */
 var w = 1920, h = 1080;
@@ -36,11 +44,11 @@ map.fitBounds(bounds);
 
 /* Marcadores de las zonas que aparecen en el mapa */
 const zonas = [
-    L.marker([750, 800]).addTo(map).on('click', () => showZone('Bocasucia', images.boca_sucia, 'Pueblo desolado que sirve como punto de inicio en Hollow Knight. Se encuentra en la superficie, justo sobre Hallownest, y actúa como un refugio para los pocos habitantes que aún permanecen en el reino caído.')),
-    L.marker([400, 700]).addTo(map).on('click', () => showZone('Nido Profundo', images.nido_profundo, ' Es una de las zonas más peligrosas y opresivas de Hollow Knight. Es un laberinto oscuro y enredado de túneles infestados de criaturas hostiles, con un ambiente claustrofóbico y sonidos inquietantes que refuerzan su tono aterrador.')),
-    L.marker([400, 1400]).addTo(map).on('click', () => showZone('Limites del reino', images.limites_reino, 'Es una región extensa y vertical, con múltiples plataformas y acantilados. Alberga enemigos poderosos como los Guerreros Alados (Winged Sentries) y los Colmipiedras (Primal Aspids), conocidos por su agresividad.')),
-    L.marker([700, 1300]).addTo(map).on('click', () => showZone('Tierras de reposo', images.tierras_reposo, 'Es una zona tranquila y melancólica en Hollow Knight, conocida por ser un antiguo cementerio lleno de tumbas y monumentos a los habitantes de Hallownest. Se encuentra en una elevación sobre la Ciudad de Lágrimas y está envuelta en un aura de serenidad y misterio.')),
-    L.marker([500, 1200]).addTo(map).on('click', () => showZone('Ciudad de lagrimas', images.ciudad_lagrimas, 'Es el corazón de Hallownest y una de las zonas más impresionantes de Hollow Knight. Es una vasta metrópoli en ruinas, caracterizada por su arquitectura majestuosa y su lluvia eterna, que cae debido a la apertura en el techo del reino.') )
+    L.marker([750, 800], { icon: customIcon }).addTo(map).on('click', () => showZone('Bocasucia', images.boca_sucia, 'Pueblo desolado que sirve como punto de inicio en Hollow Knight. Se encuentra en la superficie, justo sobre Hallownest, y actúa como un refugio para los pocos habitantes que aún permanecen en el reino caído.')),
+    L.marker([400, 700], { icon: customIcon }).addTo(map).on('click', () => showZone('Nido Profundo', images.nido_profundo, ' Es una de las zonas más peligrosas y opresivas de Hollow Knight. Es un laberinto oscuro y enredado de túneles infestados de criaturas hostiles, con un ambiente claustrofóbico y sonidos inquietantes que refuerzan su tono aterrador.')),
+    L.marker([400, 1400], { icon: customIcon }).addTo(map).on('click', () => showZone('Limites del reino', images.limites_reino, 'Es una región extensa y vertical, con múltiples plataformas y acantilados. Alberga enemigos poderosos como los Guerreros Alados (Winged Sentries) y los Colmipiedras (Primal Aspids), conocidos por su agresividad.')),
+    L.marker([700, 1300], { icon: customIcon }).addTo(map).on('click', () => showZone('Tierras de reposo', images.tierras_reposo, 'Es una zona tranquila y melancólica en Hollow Knight, conocida por ser un antiguo cementerio lleno de tumbas y monumentos a los habitantes de Hallownest. Se encuentra en una elevación sobre la Ciudad de Lágrimas y está envuelta en un aura de serenidad y misterio.')),
+    L.marker([500, 1200], { icon: customIcon }).addTo(map).on('click', () => showZone('Ciudad de lagrimas', images.ciudad_lagrimas, 'Es el corazón de Hallownest y una de las zonas más impresionantes de Hollow Knight. Es una vasta metrópoli en ruinas, caracterizada por su arquitectura majestuosa y su lluvia eterna, que cae debido a la apertura en el techo del reino.') )
 
 ];
 

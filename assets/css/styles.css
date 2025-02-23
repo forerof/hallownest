@@ -40,6 +40,15 @@ body {
     font-size: 18px;
     background-color: #000000;
     color: #FFFFFF;
+    cursor: url('../img/cursor.cur'), auto;
+}
+
+a {
+    cursor: url('../img/cursor.cur'), pointer;
+}
+
+button {
+    cursor: url('../img/cursor.cur'), pointer !important;
 }
 
 /* Hacer que html y body ocupen toda la altura del viewport */
@@ -404,7 +413,7 @@ a.header-link:hover {
 /* Carta de información */
 .info-card {
     position: absolute;
-    left: 20%;
+    left: 25%;
     /* Centra la tarjeta dentro del mapa */
     transform: translateX(-50%);
     /* Asegura que esté realmente centrada */
@@ -426,17 +435,22 @@ a.header-link:hover {
 .back-button {
     position: absolute;
     bottom: 20px;
-    left: 50%;
+    left: 83%;
     transform: translateX(-50%);
     padding: 10px 15px;
-    background: #007bff;
     color: white;
-    border: none;
-    border-radius: 5px;
+    background: rgba(1, 1, 1, 0.833);  /* Fondo transparente */
+    border: 2px solid white;  /* Borde blanco */
+    border-radius: 8px;  /* Esquinas redondeadas */
     cursor: pointer;
     display: none;
     z-index: 1000;
     /* Asegura que esté por encima del mapa */
+}
+
+.leaflet-marker-icon,
+.leaflet-interactive {
+    cursor: url('../img/cursor.cur'), pointer;
 }
 
 /* Responsividad */
