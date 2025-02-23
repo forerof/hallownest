@@ -5,7 +5,7 @@ const isMobile = window.innerWidth < 800;
 
 var map = L.map('map', {
     crs: L.CRS.Simple,          // Sistema de coordenadas en píxeles
-    zoom: isMobile ? 3 : 2, 
+    zoom: isMobile ? 10 : 2, 
     zoomSnap: 0,                // Permite niveles de zoom intermedios
     minZoom: -2,                // Permite alejarse más si es necesario
     zoomControl: false,         // Permite botones de zoom (default)
