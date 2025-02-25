@@ -51,6 +51,10 @@ button {
     cursor: url('../img/cursor.cur'), pointer !important;
 }
 
+img {
+    cursor: url('../img/cursor.cur'), pointer !important;
+}
+
 /* Hacer que html y body ocupen toda la altura del viewport */
 html,
 body {
